@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+    :root{
+    --Gradient-one: hsl(6, 100%, 80%);
+    --Gradient-two: hsl(335, 100%, 65%);
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    background: var(--Very-Dark-Blue);
+}
+
+.bg-img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.bg-mobile{
+    display: none;
+}
+
+.container {
+	width: 920px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 99;
+}
+
+.container .content{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    height: 202px;
+    border-radius: 10px;
+    padding: 30px;
+    border-top-right-radius: 100px;
+    background-color: var(--Dark-Blue);
+}
+
+.logo{
+    width: 138px;
+    margin-bottom: 33px;
+}
+
+
+.btns{
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--Very-Dark-Blue);
+    padding: 10px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.btn.upload{
+    margin-right: 0;
+}
+
+.right{
+    position: relative;
+    width: 540px;
+    height: 156px;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: var(--Dark-Blue);
+}
+
+.right .storage-left{
+    position: absolute;
+    top: -40px;
+    right: 42px;
+    text-align: center;
+    width: 180px;
+    height: 72px;
+    line-height: 45px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.right .storage-left::before {
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	border-top: 26px solid transparent;
+	border-left: 22px solid white;
+	border-right: 0;
+	border-bottom: 0;
+	transform: rotate(180deg);
+}
+
+.right .storage-left .value{
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--Very-Dark-Blue);
+}
+
+.right .storage-left .text{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--Grayish-Blue);
+}
+
+.right p{
+    color: var(--Pale-Blue);
+    margin-bottom: 15px;
+}
+
+.right .storage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right span{
+    display: block;
+    color: var(--Pale-Blue);
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.bar{
+    position: relative;
+    width: 100%;
+    height: 20px;
+    border: 3px solid var(--Very-Dark-Blue);
+    border-radius: 20px;
+    background-color: var(--Very-Dark-Blue);
+}
+
+.bar::before{
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(to right, var(--Gradient-one), var(--Gradient-two));
+}
+
+.bar::after {
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	top: 50%;
+	left: 78.4%;
+	transform: translate(-50%, -50%);
+	border-radius: 20px;
+	background-color: var(--Pale-Blue);
+}
+
+@media (max-width:980px) {
+    .container {
+        width: 90%;
+    }
+    .container .content{
+        flex-direction: column;
+        align-items: start;
+    }
+    .right{
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:680px) {
+    .bg-mobile {
+        display: block;
+        width: 100%;
+        height: 100vh;
+    }
+    .bg-desktop{
+        display: none;
+    }
+    .right .storage-left {
+        top: 105%;
+        right: 0%;
+        transform: translate(-50%, -50%);
+    }
+    .right .storage-left::before {
+        display: none;
+    }
+    .left{
+        width: 100%;
+    }
+}
